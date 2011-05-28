@@ -17,6 +17,7 @@ _cache
 _cache\*
 */logs/
 *.svclog
+*.docstates
 
 packages/
 
