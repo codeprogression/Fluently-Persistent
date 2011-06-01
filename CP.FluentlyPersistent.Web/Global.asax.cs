@@ -14,6 +14,7 @@ namespace CP.FluentlyPersistent.Web
 
             var container = Container.Initialize();
             DependencyResolver.SetResolver(new SmDependencyResolver(container));
+
         }
     }
 }

@@ -7,7 +7,12 @@ namespace CP.FluentlyPersistent.Web.Bootstrap
 {
     public class Container
     {
-        private static IContainer _container;
+        static IContainer _container;
+
+        static IContainer Self
+        {
+            get { return _container; }
+        }
 
         public static IContainer Initialize()
         {
@@ -22,17 +27,14 @@ namespace CP.FluentlyPersistent.Web.Bootstrap
                             });
                         x.AddRegistry<NHibernateRegistration>();
                     }
-            
+                );
 
-    );
-            
             return _container;
         }
-        private static IContainer Self { get { return _container; } }
 
         public static T GetInstance<T>()
         {
-            return (T)Self.GetInstance(typeof(T));
+            return (T) Self.GetInstance(typeof (T));
         }
 
         public static object GetInstance(Type instanceType)
@@ -42,7 +44,7 @@ namespace CP.FluentlyPersistent.Web.Bootstrap
 
         public static T GetNamedInstance<T>(string name)
         {
-            return (T)GetNamedInstance(typeof(T), name);
+            return (T) GetNamedInstance(typeof (T), name);
         }
 
         public static object GetNamedInstance(Type instanceType, string name)
