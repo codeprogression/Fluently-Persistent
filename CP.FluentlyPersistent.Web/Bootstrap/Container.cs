@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using StructureMap;
 
-namespace CP.FluentlyPersistent.Web.Infrastructure
+namespace CP.FluentlyPersistent.Web.Bootstrap
 {
     public class Container
     {
@@ -20,6 +20,7 @@ namespace CP.FluentlyPersistent.Web.Infrastructure
                                 s.AssembliesFromApplicationBaseDirectory();
                                 s.WithDefaultConventions();
                             });
+                        x.AddRegistry<NHibernateRegistration>();
                     }
             
 

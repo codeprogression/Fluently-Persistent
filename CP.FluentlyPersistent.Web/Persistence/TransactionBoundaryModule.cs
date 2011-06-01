@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Web;
+using CP.FluentlyPersistent.Web.Bootstrap;
 
-namespace CP.FluentlyPersistent.Web.Infrastructure.Persistence
+namespace CP.FluentlyPersistent.Web.Persistence
 {
     public class TransactionBoundaryModule : IHttpModule
     {

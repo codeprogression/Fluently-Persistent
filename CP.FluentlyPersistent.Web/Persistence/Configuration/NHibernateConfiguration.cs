@@ -6,7 +6,7 @@ using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 
-namespace CP.FluentlyPersistent.Web.Infrastructure.Persistence.Configuration
+namespace CP.FluentlyPersistent.Web.Persistence.Configuration
 {
     public class NHibernateConfiguration
     {

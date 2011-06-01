@@ -37,6 +37,12 @@
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.1.1\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Contrib.Mvc">
+      <HintPath>..\packages\Elmah.Contrib.Mvc.1.0\lib\net40\Elmah.Contrib.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="FluentNHibernate">
       <HintPath>..\packages\FluentNHibernate.1.2.0.712\lib\FluentNHibernate.dll</HintPath>
     </Reference>
@@ -80,22 +86,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrap\NHibernateRegistration.cs" />
+    <Compile Include="Bootstrap\RouteRegistry.cs" />
     <Compile Include="Bootstrap\SmDependencyResolver.cs" />
-    <Compile Include="Bootstrap\StructuremapMvc.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\Container.cs" />
-    <Compile Include="Infrastructure\Persistence\Configuration\EntityAutoMappingConfiguration.cs" />
-    <Compile Include="Infrastructure\Persistence\Configuration\EntityAutoPersistenceModelConfiguration.cs" />
-    <Compile Include="Infrastructure\Persistence\Configuration\IAutoPersistenceModelConfiguration.cs" />
-    <Compile Include="Infrastructure\Persistence\Configuration\IFluentMappingConfiguration.cs" />
-    <Compile Include="Infrastructure\Persistence\Configuration\IHbmMappingConfiguration.cs" />
-    <Compile Include="Infrastructure\Persistence\Configuration\NHibernateConfiguration.cs" />
-    <Compile Include="Infrastructure\Persistence\TransactionBoundary.cs" />
-    <Compile Include="Infrastructure\Persistence\TransactionBoundaryModule.cs" />
+    <Compile Include="Bootstrap\Container.cs" />
+    <Compile Include="Persistence\Configuration\EntityAutoMappingConfiguration.cs" />
+    <Compile Include="Persistence\Configuration\EntityAutoPersistenceModelConfiguration.cs" />
+    <Compile Include="Persistence\Configuration\IAutoPersistenceModelConfiguration.cs" />
+    <Compile Include="Persistence\Configuration\IFluentMappingConfiguration.cs" />
+    <Compile Include="Persistence\Configuration\IHbmMappingConfiguration.cs" />
+    <Compile Include="Persistence\Configuration\NHibernateConfiguration.cs" />
+    <Compile Include="Persistence\TransactionBoundary.cs" />
+    <Compile Include="Persistence\TransactionBoundaryModule.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Domain\Entity.cs" />
     <Compile Include="Models\Domain\Invoice.cs" />
@@ -174,8 +181,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Infrastructure\Persistence\Conventions\" />
-    <Folder Include="Infrastructure\Persistence\Interceptors\" />
+    <Folder Include="Persistence\Conventions\" />
+    <Folder Include="Persistence\Interceptors\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

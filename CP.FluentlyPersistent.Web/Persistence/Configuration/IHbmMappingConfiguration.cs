@@ -1,6 +1,6 @@
 ﻿using FluentNHibernate.Cfg;
 
-namespace CP.FluentlyPersistent.Web.Infrastructure.Persistence.Configuration
+namespace CP.FluentlyPersistent.Web.Persistence.Configuration
 {
     public interface IHbmMappingConfiguration
     {

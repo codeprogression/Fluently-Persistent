@@ -1,7 +1,7 @@
 using CP.FluentlyPersistent.Web.Models.Domain;
 using FluentNHibernate.Automapping;
 
-namespace CP.FluentlyPersistent.Web.Infrastructure.Persistence.Configuration
+namespace CP.FluentlyPersistent.Web.Persistence.Configuration
 {
     public class EntityAutoPersistenceModelConfiguration : IAutoPersistenceModelConfiguration
     {

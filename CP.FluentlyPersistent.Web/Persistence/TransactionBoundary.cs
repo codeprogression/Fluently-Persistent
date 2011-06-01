@@ -3,7 +3,7 @@ using System.Data;
 using NHibernate;
 using StructureMap;
 
-namespace CP.FluentlyPersistent.Web.Infrastructure.Persistence
+namespace CP.FluentlyPersistent.Web.Persistence
 {
     public interface ITransactionBoundary
     {
