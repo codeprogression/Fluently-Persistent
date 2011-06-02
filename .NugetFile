@@ -1,5 +1,0 @@
-install_to 'packages'
-chew 'machine.specifications'
-chew 'fluentnhibernate'
-chew 'structuremap'
-chew 'nhibernateprofiler'

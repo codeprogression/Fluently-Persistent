@@ -9,7 +9,7 @@ namespace CP.FluentlyPersistent.Web.Bootstrap
     {
         static IContainer _container;
 
-        static IContainer Self
+        static IContainer Self 
         {
             get { return _container; }
         }
