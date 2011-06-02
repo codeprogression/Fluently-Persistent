@@ -11,7 +11,8 @@ namespace CP.FluentlyPersistent.Web.Persistence.Configuration
                 .AssemblyOf<Entity>(new EntityAutoMappingConfiguration())
                 .IgnoreBase<Entity>()
                 .UseOverridesFromAssemblyOf<Entity>()
-                .Conventions.AddFromAssemblyOf<Entity>();
+                .Conventions.AddFromAssemblyOf<Entity>()
+                .OverrideAll(x=> x.IgnoreProperties(p => !p.CanWrite));
         }
     }
 }

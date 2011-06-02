@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CP.FluentlyPersistent.Web", "CP.FluentlyPersistent.Web\CP.FluentlyPersistent.Web.csproj", "{19CD6601-A0AC-4B95-8FED-0EB688A0D71E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CP.FluentlyPersistent.Test", "CP.FluentlyPersistent.Test\CP.FluentlyPersistent.Test.csproj", "{5162445E-7F21-4F44-8EE0-3A23FE3B123C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,16 @@ Global
 		{19CD6601-A0AC-4B95-8FED-0EB688A0D71E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{19CD6601-A0AC-4B95-8FED-0EB688A0D71E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{19CD6601-A0AC-4B95-8FED-0EB688A0D71E}.Release|x86.ActiveCfg = Release|Any CPU
+		{5162445E-7F21-4F44-8EE0-3A23FE3B123C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5162445E-7F21-4F44-8EE0-3A23FE3B123C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5162445E-7F21-4F44-8EE0-3A23FE3B123C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5162445E-7F21-4F44-8EE0-3A23FE3B123C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5162445E-7F21-4F44-8EE0-3A23FE3B123C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5162445E-7F21-4F44-8EE0-3A23FE3B123C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5162445E-7F21-4F44-8EE0-3A23FE3B123C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5162445E-7F21-4F44-8EE0-3A23FE3B123C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5162445E-7F21-4F44-8EE0-3A23FE3B123C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5162445E-7F21-4F44-8EE0-3A23FE3B123C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

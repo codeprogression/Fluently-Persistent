@@ -17,9 +17,9 @@ namespace CP.FluentlyPersistent.Web.Persistence.Configuration
             return type.GetInterfaces().Contains(typeof (IComponent));
         }
 
-        public override string GetComponentColumnPrefix(FluentNHibernate.Member member)
-        {
-            return member.PropertyType.Name + "_";
-        }
+//        public override string GetComponentColumnPrefix(FluentNHibernate.Member member)
+//        {
+//            return member.Name.Replace(member.PropertyType.Name, "") + "";
+//        }
     }
 }

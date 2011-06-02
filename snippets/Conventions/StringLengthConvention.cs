@@ -1,7 +1,8 @@
+using System.ComponentModel.DataAnnotations;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Instances;
 
-namespace CP.FluentlyPersistent.Core.Persistence.Conventions
+namespace CP.FluentlyPersistent.Web.Persistence.Conventions
 {
     public class StringLengthConvention : AttributePropertyConvention<StringLengthAttribute>
     {
