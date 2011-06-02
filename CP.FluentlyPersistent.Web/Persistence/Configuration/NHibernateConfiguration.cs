@@ -11,7 +11,7 @@ namespace CP.FluentlyPersistent.Web.Persistence.Configuration
     public class NHibernateConfiguration
     {
 
-        #region 
+        #region Noise I want to hide right now
         
         readonly IEnumerable<IAutoPersistenceModelConfiguration> _models;
         readonly IEnumerable<IFluentMappingConfiguration> _fluentMappings;
@@ -21,10 +21,6 @@ namespace CP.FluentlyPersistent.Web.Persistence.Configuration
 
         public NHibernateConfiguration(IEnumerable<IAutoPersistenceModelConfiguration> models) : this(models,null,null) {}
         
-        #endregion
-
-        #region Constructor
-
         public NHibernateConfiguration(IEnumerable<IAutoPersistenceModelConfiguration> models, 
             IEnumerable<IFluentMappingConfiguration> fluentMappings, 
             IEnumerable<IHbmMappingConfiguration> hbmMappings)
@@ -89,7 +85,7 @@ namespace CP.FluentlyPersistent.Web.Persistence.Configuration
 
         protected virtual void BuildSchema(NHibernate.Cfg.Configuration config)
         {
-            new SchemaExport(config).Create(true, true);
+            new SchemaExport(config).Create(false, false);
         }
     }
 }

@@ -31,6 +31,12 @@ namespace CP.FluentlyPersistent.Web.Bootstrap
 
             return _container;
         }
+        public static IContainer Initialize(Action<ConfigurationExpression> configuration)
+        {
+            _container = new StructureMap.Container(configuration);
+
+            return _container;
+        }
 
         public static T GetInstance<T>()
         {
