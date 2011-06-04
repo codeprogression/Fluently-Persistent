@@ -67,6 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comparers\AddressInfoComparer.cs" />
+    <Compile Include="Comparers\PhoneInfoComparer.cs" />
+    <Compile Include="CustomerPersistenceTest.cs" />
     <Compile Include="SpecificationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

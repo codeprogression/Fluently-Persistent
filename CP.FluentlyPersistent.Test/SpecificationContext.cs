@@ -1,57 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using CP.FluentlyPersistent.Web.Bootstrap;
-using CP.FluentlyPersistent.Web.Persistence.Configuration;
+﻿using CP.FluentlyPersistent.Web.Persistence.Configuration;
 using HibernatingRhinos.Profiler.Appender.NHibernate;
 using Machine.Specifications;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
-using StructureMap;
-using Container = CP.FluentlyPersistent.Web.Bootstrap.Container;
 
 namespace CP.FluentlyPersistent.Test
 {
-    public class SpecificationContext : IAssemblyContext
+    public class SpecificationContext : NHibernateConfiguration, IAssemblyContext
     {
         public static ISession Session;
 
+        public SpecificationContext() : base(new[] { new EntityAutoPersistenceModelConfiguration() }) { }
+
         public void OnAssemblyStart()
         {
-            Container.Initialize(GetContainerConfiguration());
-            NHibernateProfiler.Initialize();
-            Session = Container.GetInstance<ISession>();
+            InitializeNHibernateProfiler();
+            InitializeSession();
         }
 
         public void OnAssemblyComplete()
         {
+            Session.Dispose();
         }
 
 
-        static Action<ConfigurationExpression> GetContainerConfiguration()
+        void InitializeSession()
         {
-            Action<ConfigurationExpression> config = x =>
-                {
-                    x.Scan(s =>
-                        {
-                            s.LookForRegistries();
-                            s.AssembliesFromApplicationBaseDirectory();
-                            s.WithDefaultConventions();
-                        });
-
-                    //Making sure I add this instance before adding from NHibernateRegistration
-                    x.ForSingletonOf<ISessionFactory>().Use(
-                        c => c.GetInstance<NHibernateConfiguration>().CreateSessionFactory());
-
-                    x.AddRegistry<NHibernateRegistration>();
-                };
-            return config;
+            var sessionFactory = CreateSessionFactory(GetSqlConfiguration(), BuildSchema);
+            Session = sessionFactory.OpenSession();
+            Session.FlushMode = FlushMode.Auto;
         }
-    }
 
-    public class NHibernateConfiguration : Web.Persistence.Configuration.NHibernateConfiguration
-    {
-        public NHibernateConfiguration(IEnumerable<IAutoPersistenceModelConfiguration> models) : base(models)
+        static void InitializeNHibernateProfiler()
         {
+            NHibernateProfiler.Initialize();
         }
         protected override void BuildSchema(NHibernate.Cfg.Configuration config)
         {

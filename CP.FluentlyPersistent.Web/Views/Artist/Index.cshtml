@@ -1,0 +1,13 @@
+﻿@using CP.FluentlyPersistent.Web.Models.Domain
+@model IList<Artist>
+@{
+    ViewBag.Title = "Artist Listing";
+}
+
+<h2>@ViewBag.Message</h2>
+<h4>Query executed in @ViewBag.QueryTime milliseconds</h4>
+
+@foreach (var artist in Model)
+{
+    <p>@artist.Name (@artist.Albums.Count())</p>
+}

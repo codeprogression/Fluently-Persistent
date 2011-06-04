@@ -1,8 +1,11 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
 }
 
-<h2>@ViewBag.Message</h2>
-<p>
-    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-</p>
+<h2>Home</h2>
+<h4>Artists</h4>
+<ul>
+    <li>@Html.ActionLink("Artists", "Index", "Artist")</li>
+    <li>@Html.ActionLink("Artists (ViewModel)", "ViewModel", "Artist")</li>
+    <li>@Html.ActionLink("Artists (Better ViewModel)", "BetterViewModel", "Artist")</li>
+</ul>

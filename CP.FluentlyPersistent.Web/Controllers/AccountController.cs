@@ -38,7 +38,7 @@ namespace CP.FluentlyPersistent.Web.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Artist");
                     }
                 }
                 else
@@ -58,7 +58,7 @@ namespace CP.FluentlyPersistent.Web.Controllers
         {
             FormsAuthentication.SignOut();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Artist");
         }
 
         //
@@ -84,7 +84,7 @@ namespace CP.FluentlyPersistent.Web.Controllers
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Artist");
                 }
                 else
                 {

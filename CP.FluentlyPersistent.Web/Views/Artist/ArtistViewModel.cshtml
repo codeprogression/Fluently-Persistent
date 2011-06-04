@@ -1,0 +1,10 @@
+﻿@using CP.FluentlyPersistent.Web.Models.ViewModels
+@model IList<ArtistViewModel>
+
+<h2>@ViewBag.Message</h2>
+<h4>Query executed in @ViewBag.QueryTime milliseconds</h4>
+
+@foreach (var artist in Model)
+{
+    <p>@artist.Name (@artist.AlbumCount)</p>
+}
