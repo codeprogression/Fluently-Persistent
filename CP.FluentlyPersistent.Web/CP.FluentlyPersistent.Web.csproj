@@ -95,9 +95,6 @@
     <Compile Include="Bootstrap\SmDependencyResolver.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Models\PersistenceOverrides\CustomerOverride.cs" />
-    <Compile Include="Models\PersistenceOverrides\EmployeeOverride.cs" />
-    <Compile Include="Models\PersistenceOverrides\PlaylistOverride.cs" />
     <Compile Include="Models\ViewModels\ArtistViewModel.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Global.asax.cs">
@@ -110,28 +107,6 @@
     <Compile Include="Persistence\Configuration\IFluentMappingConfiguration.cs" />
     <Compile Include="Persistence\Configuration\IHbmMappingConfiguration.cs" />
     <Compile Include="Persistence\Configuration\NHibernateConfiguration.cs" />
-    <Compile Include="Persistence\Conventions\AddressComponentConvention.cs" />
-    <Compile Include="Persistence\Conventions\CollectionConstraintConvention.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Persistence\Conventions\ForeignKeyConvention.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Persistence\Conventions\NumericConvention.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Persistence\Conventions\PrimaryKeyConvention.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Persistence\Conventions\ReferencesConstraintConvention.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Persistence\Conventions\RequiredConvention.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Persistence\Conventions\StringLengthConvention.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Persistence\TransactionBoundary.cs" />
     <Compile Include="Persistence\TransactionBoundaryModule.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -212,6 +187,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\PersistenceOverrides\" />
+    <Folder Include="Persistence\Conventions\" />
     <Folder Include="Persistence\Interceptors\" />
   </ItemGroup>
   <ItemGroup>
