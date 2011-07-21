@@ -1,0 +1,11 @@
+2011-07-21 10:14:26,767 [1] INFO  Rhino.Licensing.LicenseValidator [(null)] - License expiration date is 12/31/9999 23:59:59
+2011-07-21 10:14:26,851 [1] DEBUG Rhino.Licensing.LicenseValidator [(null)] - License accepted for NHibernate Profiler
+2011-07-21 10:14:27,917 [6] INFO  HibernatingRhinos.Profiler.Client.App [(null)] - Checking for updates...
+2011-07-21 10:14:28,333 [6] ERROR HibernatingRhinos.Profiler.Client.App [(null)] - Error while checking for updates: System.NullReferenceException: Object reference not set to an instance of an object.
+   at NAppUpdate.Framework.UpdateManager.CheckForUpdates(IUpdateSource source, Action`1 callback)
+   at NAppUpdate.Framework.UpdateManager.<>c__DisplayClass2.<CheckForUpdateAsync>b__1()
+2011-07-21 10:19:26,747 [15] INFO  Rhino.Licensing.LicenseValidator [(null)] - License expiration date is 12/31/9999 23:59:59
+2011-07-21 10:24:26,741 [3] INFO  Rhino.Licensing.LicenseValidator [(null)] - License expiration date is 12/31/9999 23:59:59
+2011-07-21 10:29:26,725 [16] INFO  Rhino.Licensing.LicenseValidator [(null)] - License expiration date is 12/31/9999 23:59:59
+2011-07-21 10:34:26,719 [3] INFO  Rhino.Licensing.LicenseValidator [(null)] - License expiration date is 12/31/9999 23:59:59
+2011-07-21 10:39:26,703 [3] INFO  Rhino.Licensing.LicenseValidator [(null)] - License expiration date is 12/31/9999 23:59:59

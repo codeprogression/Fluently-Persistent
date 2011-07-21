@@ -19,8 +19,6 @@ _cache\*
 *.svclog
 *.docstates
 
-packages/
-
 */ClientBin
 */Generated_Code
 
