@@ -1,7 +1,7 @@
 using HibernatingRhinos.Profiler.Appender.NHibernate;
 
-[assembly: WebActivator.PreApplicationStartMethod(typeof(CP.FluentlyPersistent.Web.App_Start.NHibernateProfilerBootstrapper), "PreStart")]
-namespace CP.FluentlyPersistent.Web.App_Start
+[assembly: WebActivator.PreApplicationStartMethod(typeof(CP.FluentlyPersistent.Test.App_Start.NHibernateProfilerBootstrapper), "PreStart")]
+namespace CP.FluentlyPersistent.Test.App_Start
 {
 	public static class NHibernateProfilerBootstrapper
 	{
