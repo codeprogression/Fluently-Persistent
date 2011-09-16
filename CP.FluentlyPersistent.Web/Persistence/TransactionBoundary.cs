@@ -7,7 +7,8 @@ namespace CP.FluentlyPersistent.Web.Persistence
 {
     public interface ITransactionBoundary
     {
-        ISession CurrentSession { get; }
+        Lazy<ISession> CurrentSession { get; }
+        bool HasOpenTransaction { get; }
         void Begin();
         void Commit();
         void RollBack();
@@ -28,21 +29,30 @@ namespace CP.FluentlyPersistent.Web.Persistence
             _sessionFactory = sessionFactory;
             _interceptor = interceptor ?? new EmptyInterceptor();
         }
+
+        public bool HasOpenTransaction
+        {
+            get { return _begun; }
+        }
+
         public void Begin()
         {
             CheckIsDisposed();
 
             CurrentSession = CreateSession();
 
-            BeginNewTransaction();
-            _begun = true;
         }
 
-        ISession CreateSession()
+        Lazy<ISession> CreateSession()
         {
-            var session = _sessionFactory.OpenSession(_interceptor);
-            session.FlushMode = FlushMode.Commit;
-            return session;
+             return new Lazy<ISession>(() =>
+             {
+                 var session = _sessionFactory.OpenSession(_interceptor);
+                    session.FlushMode = FlushMode.Commit;
+                    BeginNewTransaction(session);
+                    _begun = true;
+                 return session;
+             });
         }
 
         public void Commit()
@@ -75,16 +85,16 @@ namespace CP.FluentlyPersistent.Web.Persistence
             ObjectFactory.ReleaseAndDisposeAllHttpScopedObjects();
         }
 
-        public ISession CurrentSession { get; private set; }
+        public Lazy<ISession> CurrentSession { get; private set; }
 
-        private void BeginNewTransaction()
+        private void BeginNewTransaction(ISession session)
         {
             if (_transaction != null)
             {
                 _transaction.Dispose();
             }
 
-            _transaction = CurrentSession.BeginTransaction(IsolationLevel.ReadUncommitted);
+            _transaction = session.BeginTransaction(IsolationLevel.ReadUncommitted);
         }
 
         protected virtual void Dispose(bool disposing)
@@ -95,7 +105,7 @@ namespace CP.FluentlyPersistent.Web.Persistence
             if (disposing)
             {
                 _transaction.Dispose();
-                CurrentSession.Dispose();
+                CurrentSession.Value.Dispose();
             }
 
             _disposed = true;

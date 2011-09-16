@@ -22,6 +22,8 @@ namespace CP.FluentlyPersistent.Web.Persistence
         static void EndRequest(object sender, EventArgs e)
         {
                 var instance = Container.GetInstance<ITransactionBoundary>();
+
+                if (!instance.HasOpenTransaction) return;
                 try
                 {
                     instance.Commit();

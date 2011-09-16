@@ -12,7 +12,6 @@ namespace CP.FluentlyPersistent.Web.Bootstrap
                 x => x.GetInstance<NHibernateConfiguration>().CreateSessionFactory());
 
             For<IInterceptor>().Use<EmptyInterceptor>();
-//            For<IInterceptor>().Use<DefaultInterceptor>();
             
             For<ITransactionBoundary>().HybridHttpOrThreadLocalScoped().Use<TransactionBoundary>();
 
@@ -21,10 +20,9 @@ namespace CP.FluentlyPersistent.Web.Bootstrap
             For<ISession>().Use(x =>
                 {
                     var instance = x.GetInstance<ITransactionBoundary>();
-                    return instance.CurrentSession;
+                    return instance.CurrentSession.Value;
                 });
 
-//            For<IRepository>().Use<Repository>();
 
             Scan(s =>
                 {
